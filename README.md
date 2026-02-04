@@ -26,7 +26,7 @@ Frontend được phát triển bằng **ReactJS + Vite**, giao tiếp với bac
 - Context API
 
 ### Backend (tích hợp)
-- Java / Python
+- Java
 - REST API
 - LLM (OpenAI API – qua backend)
 
