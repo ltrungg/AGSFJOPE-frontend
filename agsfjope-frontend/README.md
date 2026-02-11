@@ -1,16 +1,75 @@
-# React + Vite
+# AGSFJOPE – Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Automatic Grading System for Java OOP Practical Exams  
+**Hệ thống chấm điểm tự động bài thi thực hành Lập trình Hướng đối tượng Java**
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 Giới thiệu
 
-## React Compiler
+AGSFJOPE là frontend của hệ thống chấm điểm tự động bài thi Java OOP, được xây dựng nhằm hỗ trợ giảng viên, trợ giảng và sinh viên trong việc:
+- Nộp bài thực hành Java
+- Chấm điểm tự động dựa trên test case, phân tích OOP và LLM
+- Cung cấp phản hồi chi tiết, minh bạch và nhất quán
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Frontend được phát triển bằng **ReactJS + Vite**, giao tiếp với backend Java thông qua REST API.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠 Công nghệ sử dụng
+
+### Frontend
+- Vite
+- ReactJS (JavaScript)
+- React Router DOM
+- Axios
+- Context API
+
+### Backend (tích hợp)
+- Java
+- REST API
+- LLM (OpenAI API – qua backend)
+
+---
+
+## 📂 Cấu trúc thư mục
+
+```txt
+src/
+├── api/                # Gọi API backend
+│   ├── axiosClient.js
+│   ├── authApi.js
+│   ├── submissionApi.js
+│   └── gradingApi.js
+│
+├── components/         # Component UI dùng chung
+│   ├── Button.jsx
+│   ├── Sidebar.jsx
+│   ├── Navbar.jsx
+│   └── Modal.jsx
+│
+├── layouts/            # Layout theo role
+│   ├── StudentLayout.jsx
+│   ├── LecturerLayout.jsx
+│   └── AdminLayout.jsx
+│
+├── pages/              # Các trang (route)
+│   ├── auth/
+│   │   └── Login.jsx
+│   ├── student/
+│   │   └── SubmitCode.jsx
+│   └── lecturer/
+│       └── Dashboard.jsx
+│
+├── routes/
+│   └── AppRoutes.jsx
+│
+├── context/
+│   └── AuthContext.jsx
+│
+├── constants/
+│   └── roles.js
+│
+├── App.jsx
+└── main.jsx
+"# AGSFJOPE-frontend" 
