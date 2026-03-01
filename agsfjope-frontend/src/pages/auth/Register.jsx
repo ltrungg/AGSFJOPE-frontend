@@ -1,33 +1,32 @@
-import { useState } from 'react';
-import { Input, Button } from 'antd';
-import { IMAGE } from '../../constants/images';
-import styles from './login.module.css';
+import React, { useState } from 'react';
 import AuthLayout from '../../layouts/AuthLayout';
-import { personIcon, lockIcon } from '../../constants/icons.jsx';
+import { Input, Button } from 'antd';
+import styles from './register.module.css';
+import { lockIcon, personIcon } from '../../constants/icons.jsx';
 
-export default function Login() {
-  const [studentId, setStudentId] = useState('');
-  const [password, setPassword] = useState('');
+const Register = () => {
+  const [studentId, setStudentId] = useState();
+  const [password, setPassword] = useState();
 
-  const handleLogin = (e) => {
+  const handleRegister = (e) => {
     e.preventDefault();
   };
 
   return (
     <AuthLayout>
       <div className={styles.formWrap}>
-        <h1 className={styles.title}>Chào mừng trở lại</h1>
+        <h1 className={styles.title}>Tạo tài khoản</h1>
         <p className={styles.subtitle}>
           <span style={{ display: 'block' }}>
             Truy cập Hệ thống chấm điểm tự động Java OOP
           </span>
           <span style={{ display: 'block' }}>
-            Nhập thông tin tài khoản của bạn để tiếp tục
+            Điền thông tin để tạo tài khoản
           </span>
         </p>
 
         <form
-          onSubmit={handleLogin}
+          onSubmit={handleRegister}
           className={styles.form}
         >
           <div>
@@ -52,6 +51,7 @@ export default function Login() {
               prefix={lockIcon}
               className={styles.input}
               size="large"
+              autoComplete="current-password"
             />
           </div>
 
@@ -62,7 +62,7 @@ export default function Login() {
             size="large"
             block
           >
-            Đăng nhập
+            Đăng kí
             <span
               className={styles.arrow}
               aria-hidden
@@ -80,13 +80,15 @@ export default function Login() {
             Quên mật khẩu?
           </a>
           <a
-            href="/register"
+            href="/login"
             className={styles.link}
           >
-            Tạo tài khoản mới
+            Đã có tài khoản? Đăng nhập
           </a>
         </div>
       </div>
     </AuthLayout>
   );
-}
+};
+
+export default Register;
